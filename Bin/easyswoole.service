@@ -1,0 +1,24 @@
+[Unit]
+Description=EASYSWOOLE Start
+After=network.target
+
+[Service]
+Group=root
+User=root
+Type=forking
+LimitNOFILE=infinity
+StandardOutput=null
+StandardError=journal
+ExecStart=/usr/local/php/bin/php easyswoole start d
+KillMode=process
+Restart=always
+KillSignal=15
+SuccessExitStatus=143
+TimeoutStopSec=3600
+ExecStart=/home/qingchengzhixiao/shell/app.sh start
+ExecReload=/home/qingchengzhixiao/shell/app.sh restart
+ExecStop=/home/qingchengzhixiao/shell/app.sh stop
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
