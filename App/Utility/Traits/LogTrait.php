@@ -7,6 +7,9 @@ namespace App\Utility\Traits;
 use EasySwoole\EasySwoole\Logger;
 use EasySwoole\Log\LoggerInterface;
 
+/**
+ * 进一步封装了下打印日志信息
+ */
 trait LogTrait
 {
     protected function exception_debug(\Throwable $exception)
@@ -80,8 +83,9 @@ trait LogTrait
 
     private function log_message($message): string
     {
-        $debugInfo = debug_backtrace();
-        $head = $debugInfo[1]['file']. '('.$debugInfo[1]['line'].') ';
+        $debugTrace = debug_backtrace();
+        $caller = array_shift($debugTrace);
+        $head = $caller['file']. '('. $caller['line'] .') ';
         return $head.$message;
     }
 

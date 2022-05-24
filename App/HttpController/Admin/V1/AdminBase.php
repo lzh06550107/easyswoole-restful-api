@@ -13,7 +13,7 @@ use EasySwoole\Validate\Validate;
 // 后台管理基础控制器定义
 class AdminBase extends BaseController
 {
-    //public才会根据协程清除
+    //对象池模式只重置非静态 public 属性，public属性在返回池中的时候清除
     public $who;
 
     protected $service;

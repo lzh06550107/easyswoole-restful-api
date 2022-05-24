@@ -20,7 +20,7 @@
     },
     "require": {
         "php": ">=7.3.0",
-        "easyswoole/easyswoole": "3.4.x",
+        "easyswoole/easyswoole": "3.5.x",
         "easyswoole/swoole-ide-helper": "^1.3",
         "easyswoole/http-client": "^1.3",
         "easyswoole/mysqli": "^2.0",
